@@ -1,26 +1,28 @@
 const pkg = require('mongoose');
-const {Schema, model} = pkg;
+const { Schema, model } = pkg;
 
 const turno = new Schema({
     service: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'servicio',
         required: true,
     },
-    appointmentStart: {
-        type: Date,
-        required: true,
-    },
-    appointmentEnd: {
-        type: Date,
-        required: true,
+    time:{
+        type: TimeRanges,
+        required: true
     },
     stylist:{
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: "peluquero",
     },
     vacancy:{
         type: Boolean,
         default: true,
+    },
+    exists: {
+        type: Boolean,
+        default: true
     }
 })
 
-export default model("turno", turno);
+module.exports = model("turno", turno);

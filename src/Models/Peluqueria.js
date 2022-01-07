@@ -6,6 +6,7 @@ const peluquerias = new Schema({
         type: String,
         required: true,
     },
+    ///username es email
     username: {
         type: String,
         required: true,
@@ -20,6 +21,8 @@ const peluquerias = new Schema({
     },
     rating: {
         type: Number,
+        defalut: 3,
+        required: true
     },
     address: {
         type: String,
@@ -32,12 +35,23 @@ const peluquerias = new Schema({
     schedule: {
         type: TimeRanges,
     },
-    services: [
-       {type: Schema.Types.ObjectId,
+    services: [{
+        type: Schema.Types.ObjectId,
         ref: "servicio",
-        required: true}
-    ]
-
+        required: true
+    }],
+    reviews: [{
+        type: Schema.Types.ObjectId,
+        ref: "review",
+    }],
+    stylists:[{
+        type: Schema.Types.ObjectId,
+        ref: "peluquero",
+    }],
+    exists:{
+        type: Boolean,
+        default: true,
+    }
 })
 
-export default model("peluquerias", peluquerias);
+module.exports = model("peluquerias", peluquerias);
