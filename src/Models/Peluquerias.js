@@ -6,6 +6,7 @@ const peluquerias = new Schema({
         type: String,
         required: true,
     },
+    ///username es email
     username: {
         type: String,
         required: true,
