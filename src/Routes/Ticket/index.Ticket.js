@@ -1,7 +1,7 @@
-const { Routes } = require('express');
+const {Router} = require('express');
 const Routerticket = require('./routes.Ticket');
 
-const router = Routes();
+const router = Router();
 
 router.use('/ticket', Routerticket);
 

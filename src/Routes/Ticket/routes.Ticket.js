@@ -1,4 +1,4 @@
-const { Routes } = require('express');
+const {Router} = require('express');
 const {
     createTicket,
     updateTicket,
@@ -7,7 +7,7 @@ const {
     getTicket
 } = require('./Controllers/all.controllers');
 
-const router = Routes();
+const router = Router();
 
 
 //   / ticket

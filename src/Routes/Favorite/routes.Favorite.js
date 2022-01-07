@@ -1,4 +1,4 @@
-const { Routes } = require('express');
+const { Router } = require('express');
 const {
     createFavorite,
     getFavorite,
@@ -7,7 +7,7 @@ const {
     deleteFavorite
 } = require('./Controllers/all.controllers');
 
-const router = Routes();
+const router = Router();
 
 
 //    / favorite

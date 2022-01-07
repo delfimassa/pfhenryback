@@ -1,4 +1,4 @@
-const { Routes } = require('express');
+const { Router } = require('express');
 const {
     createClient,
     getClient,
@@ -7,7 +7,7 @@ const {
     deleteClient
 } = require('./Controllers/all.controllers');
 
-const router = Routes();
+const router = Router();
 
 
 //   / clients

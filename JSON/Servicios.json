@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Corte",
+        "price": "$500",
+        "duration": 1,
+        "exists": true
+    },
+    {
+        "name": "Tintura",
+        "price": "$2.500",
+        "duration": 2,
+        "exists": true
+    },
+    {
+        "name": "Alisado",
+        "price": "$4500",
+        "duration": 2.5,
+        "exists": true
+    },
+    {
+        "name": "Perfilado",
+        "price": "$700",
+        "duration": 1,
+        "exists": true
+    }
+]

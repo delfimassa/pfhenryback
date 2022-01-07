@@ -1,7 +1,7 @@
-const { Routes } = require('express');
+const {Router} = require('express');
 const RouterReview = require('./routes.Review');
 
-const router = Routes();
+const router = Router();
 
 router.use('/review', RouterReview);
 

@@ -1,4 +1,4 @@
-const { Routes } = require('express');
+const {Router} = require('express');
 const {
     createMP,
     deleteMP,
@@ -7,7 +7,7 @@ const {
     updateMP
 } = require('./Controllers/all.controllers');
 
-const router = Routes();
+const router = Router();
 
 
 //   / MP

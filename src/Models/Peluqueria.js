@@ -10,6 +10,7 @@ const peluquerias = new Schema({
     username: {
         type: String,
         required: true,
+        // unique: true
     },
     password: {
         type: String,
@@ -17,14 +18,20 @@ const peluquerias = new Schema({
     },
     avatar: {
         type: String,
-        required: true,
     },
     rating: {
         type: Number,
-        defalut: 3,
-        required: true
+        defalut: 3
     },
     address: {
+        type: String,
+        required: true,
+    },
+    city: {
+        type: String,
+        required: true,
+    },
+    state: {
         type: String,
         required: true,
     },
@@ -33,7 +40,8 @@ const peluquerias = new Schema({
         required: true,
     },
     schedule: {
-        type: TimeRanges,
+        type: String,
+        required: true,
     },
     services: [{
         type: Schema.Types.ObjectId,

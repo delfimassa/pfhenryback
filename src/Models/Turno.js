@@ -8,7 +8,11 @@ const turno = new Schema({
         required: true,
     },
     time:{
-        type: TimeRanges,
+        type: String,
+        required: true
+    },
+    date: {
+        type: String,
         required: true
     },
     stylist:{

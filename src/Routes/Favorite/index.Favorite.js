@@ -1,7 +1,7 @@
-const { Routes } = require('express');
+const { Router } = require('express');
 const RoutesFavorite = require('./routes.Favorite');
 
-const router = Routes();
+const router = Router();
 
 router.use('/favorite', RoutesFavorite);
 

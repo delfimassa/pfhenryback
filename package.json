@@ -11,7 +11,9 @@
     "express": "^4.17.2",
     "mongoose": "^6.1.5",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "jsonwebtoken": "^8.5.1",
+    "mercadopago": "^1.5.11"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

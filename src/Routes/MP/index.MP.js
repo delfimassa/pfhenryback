@@ -1,7 +1,7 @@
-const { Routes } = require('express');
+const {Router} = require('express');
 const RouterMP = require('./routes.MP');
 
-const router = Routes();
+const router = Router();
 
 router.use('/MP', RouterMP);
 

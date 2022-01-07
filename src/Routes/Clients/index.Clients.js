@@ -1,7 +1,7 @@
-const { Routes } = require('express');
+const { Router } = require('express');
 const RouterClient = require('./routes.Clients');
 
-const router = Routes();
+const router = Router();
 
 router.use('/clients', RouterClient);
 

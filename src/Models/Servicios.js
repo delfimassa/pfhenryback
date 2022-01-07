@@ -7,19 +7,13 @@ const servicio = new Schema({
     required: true,
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
   },
   duration: {
-    type: TimeRanges,
+    type: Number,
     required: true,
   },
-  appointment: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "turno",
-    },
-  ],
   exists: {
     type: Boolean,
     default: true,

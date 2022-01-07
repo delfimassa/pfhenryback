@@ -1,4 +1,4 @@
-const { Routes } = require('express');
+const {Router} = require('express');
 const {
     createPeluqueria,
     deletePeluqueria,
@@ -6,7 +6,7 @@ const {
     getPeluqueria,
     updatePeluqueria
 } = require('./Controllers/all.controllers');
-const router = Routes();
+const router = Router();
 
 //  /peluqueria
 router.get('/', getPeluqueria);

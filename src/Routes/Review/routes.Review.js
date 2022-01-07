@@ -1,4 +1,4 @@
-const { Routes } = require('express');
+const {Router} = require('express');
 const {
     createReview,
     deleteReview,
@@ -7,7 +7,7 @@ const {
     updateReview
 } = require('./Controllers/all.controllers');
 
-const router = Routes();
+const router = Router();
 
 
 //    / review
