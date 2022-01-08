@@ -1,0 +1,44 @@
+[
+    {
+        "_id": {
+            "$oid": "61d9f2eced01e102f3422cb6"
+        },
+        "name": "Delfina",
+        "exists": true
+    },
+    {
+        "_id": {
+            "$oid": "61d9f2eced01e102f3422cb7"
+        },
+        "name": "Marco",
+        "exists": true
+    },
+    {
+        "_id": {
+            "$oid": "61d9f2eced01e102f3422cb8"
+        },
+        "name": "Matias",
+        "exists": true
+    },
+    {
+        "_id": {
+            "$oid": "61d9f2eced01e102f3422cb9"
+        },
+        "name": "Lucaino",
+        "exists": true
+    },
+    {
+        "_id": {
+            "$oid": "61d9f2eced01e102f3422cba"
+        },
+        "name": "Paul",
+        "exists": true
+    },
+    {
+        "_id": {
+            "$oid": "61d9f32bed01e102f342ba5d"
+        },
+        "name": "Carlos",
+        "exists": true
+    }
+]
