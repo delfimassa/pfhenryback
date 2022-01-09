@@ -7,10 +7,10 @@ const deleteService = async (req, res) => {
         let deleted = await Servicios.findByIdAndUpdate(id, {
             exists: false
         }, { new: true });
-        await deleted.saver();
+        await deleted.save();
         // console.log('deleted deleteService:', deleted);
 
-        if(deleted) return res.json(`Se elimino el servicio ${deleted.name}`);
+        if(deleted) return res.send(`Se elimino el servicio "${deleted.name}"`);
         res.status(404).send('hubo un problema al eliminar el servicio');
     } catch (error) {
         console.log(error);

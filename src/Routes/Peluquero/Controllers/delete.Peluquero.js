@@ -10,7 +10,7 @@ const deletePeluquero = async (req, res) => {
         await deleted.save();
         // console.log('deleted deletePeluquero:', deleted);
 
-        if(deleted) return res.send(`El peluquero ${deleted.name} fue eliminado`);
+        if(deleted) return res.send(`El peluquero "${deleted.name}" fue eliminado`);
     } catch (error) {
         console.log(error);
     }

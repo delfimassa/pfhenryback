@@ -2,21 +2,21 @@ const Peluquerias = require('../../../Models/Peluqueria');
 
 const getPeluqueria = async (req, res) => {
     const { name, service, order } = req.query;
-    // console.log('query getPeluqueria:', name, service, order);
+    console.log('query getPeluqueria:', name, service, order);
     try {
         let getPelu = await Peluquerias.find({ exists: true })
             .populate('services')
             .populate('reviews')
             .populate('stylists');
-        // console.log('getPelu getPeluqueria: ', getPelu);
+        console.log('getPelu getPeluqueria: ', getPelu);
 
-        if (name !== '') getPelu = getPelu.filter(P => P.name.toLowerCase().includes(name.toLowerCase()));
-        // console.log('getPelu(name) getPeluqueria: ', getPelu);
+        if (name) getPelu = getPelu.filter(P => P.name.toLowerCase().includes(name.toLowerCase()));
+        console.log('getPelu(name) getPeluqueria: ', getPelu);
 
-        if (service !== '') getPelu = getPelu.filter(P => P.services === service);
+        // if (service) getPelu = getPelu.forEach(P => P.services.filter(s => s.name !== service));
         // console.log('getPelu(service) getPeluqueria: ', getPelu);
 
-        if (order !== '') {
+        if (order) {
             switch (order) {
                 case 'MaxPrice':
                     getPelu = getPelu.sort((a, b) => {
@@ -50,7 +50,7 @@ const getPeluqueria = async (req, res) => {
                     break;
             }
         }
-        // console.log('getPelu(order) getPeluqueria: ', getPelu);
+        console.log('getPelu(order) getPeluqueria: ', getPelu);
 
         if (getPelu.length !== 0) return res.json(getPelu);
         res.status(404).send('No se trajo lo de la DB');

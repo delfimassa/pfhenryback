@@ -10,7 +10,7 @@ const deleteClient = async (req, res) => {
         await deleted.save();
         // console.log('deleted deleteClient:', deleted);
         
-        if(deleted) return res.send(`El cliente ${deleted.name} fue eliminado de la pagina`);
+        if(deleted) return res.send(`El cliente "${deleted.name}" fue eliminado de la pagina`);
         res.status(404).send('Hubo un problema al eliminar al cliente');
     } catch (error) {
         console.log(error);
