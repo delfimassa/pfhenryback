@@ -6,11 +6,11 @@ const review = new Schema({
         type: Number,
         required: true
     },
-    user:{
-        type: Schema.Types.ObjectId,
-        ref: "client",
-        required: true  
-    },
+    // user:{
+    //     type: Schema.Types.ObjectId,
+    //     ref: "client",
+    //     required: true  
+    // },
     comment:{
         type: String,
         required: true

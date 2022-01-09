@@ -116,5 +116,28 @@
           "$oid": "61d8a8f241d84b373bda3950"
         }
       ]
+  },
+  {
+    "_id":{
+      "$oid":"61d9f64b7e99a0ad764fa0cf"
+    },
+    "name":"Pelu de Carlos",
+    "username":"Carlitos@gmail.com",
+    "password":"Carlos12345",
+    "avatar":"SIN AVATAR",
+    "address":"Av. Tucuman",
+    "city":"Salsipuedes",
+    "state":"Cordoba",
+    "phone":"3515081507",
+    "schedule":"Lunes a Viernes de 10 a 18 hs",
+    "services":[
+      {"$oid":"61d8a8f241d84b373bda3950"},
+      {"$oid":"61d8a8f241d84b373bda3952"}
+    ],
+    "reviews":[],
+    "stylists":[
+      {"$oid":"61d9f32bed01e102f342ba5d"}
+    ],
+    "exists":true
   }
 ]

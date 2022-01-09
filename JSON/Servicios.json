@@ -1,23 +1,35 @@
 [
     {
+        "_id":{
+            "$oid": "61d8a8f241d84b373bda394f"
+        },
         "name": "Corte",
         "price": "$500",
         "duration": 1,
         "exists": true
     },
     {
+        "_id":{
+            "$oid": "61d8a8f241d84b373bda3950"
+        },
         "name": "Tintura",
         "price": "$2.500",
         "duration": 2,
         "exists": true
     },
     {
+        "_id":{
+            "$oid": "61d8a8f241d84b373bda3951"
+        },
         "name": "Alisado",
         "price": "$4500",
         "duration": 2.5,
         "exists": true
     },
     {
+        "_id":{
+            "$oid": "61d8a8f241d84b373bda3952"
+        },
         "name": "Perfilado",
         "price": "$700",
         "duration": 1,

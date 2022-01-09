@@ -8,7 +8,7 @@ const peluquero = new Schema({
     },
     avatar: {
         type: String,
-        require: true
+        // require: true
     },
     // calendar: {
     //     type: String,
