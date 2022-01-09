@@ -4,12 +4,15 @@ const peluquerias = require('../../../Models/Peluqueria');
 const getPeluqueria = async (req, res) => {
     const { name } = req.query;
     try {
-        const getPelu = await peluquerias.find()
+        let getPelu = await peluquerias.find({ exists: true })
         .populate('services')
         .populate('reviews')
         .populate('stylists');
-        
         console.log('getPelu getPeluqueria: ', getPelu);
+        
+        if(name !== '')  getPelu = getPelu.filter(x => x.name.toLowerCase().includes(name.toLowerCase()));
+        console.log('name getPeluqueria: ', getPelu);
+
         if(getPelu.length !== 0) return res.json(getPelu);
         res.status(404).send('No se trajo lo de la DB'); 
     } catch (error) {
@@ -25,7 +28,7 @@ const getPeluqueriaById = async (req, res) => {
         .populate('reviews')
         .populate('stylists');
         
-        if(getPeluById.exists) return res.json(getPeluById);
+        if(getPeluById && getPeluById.exists) return res.json(getPeluById);
         res.status(404).send('No se trajo lo de la DB o no existe'); 
     } catch (error) {
         console.log(error);
