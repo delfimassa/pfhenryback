@@ -1,20 +1,59 @@
-const peluquerias = require('../../../Models/Peluqueria');
-
+const Peluquerias = require('../../../Models/Peluqueria');
 
 const getPeluqueria = async (req, res) => {
-    const { name } = req.query;
+    const { name, service, order } = req.query;
+    // console.log('query getPeluqueria:', name, service, order);
     try {
-        let getPelu = await peluquerias.find({ exists: true })
-        .populate('services')
-        .populate('reviews')
-        .populate('stylists');
-        console.log('getPelu getPeluqueria: ', getPelu);
-        
-        if(name !== '')  getPelu = getPelu.filter(x => x.name.toLowerCase().includes(name.toLowerCase()));
-        console.log('name getPeluqueria: ', getPelu);
+        let getPelu = await Peluquerias.find({ exists: true })
+            .populate('services')
+            .populate('reviews')
+            .populate('stylists');
+        // console.log('getPelu getPeluqueria: ', getPelu);
 
-        if(getPelu.length !== 0) return res.json(getPelu);
-        res.status(404).send('No se trajo lo de la DB'); 
+        if (name !== '') getPelu = getPelu.filter(P => P.name.toLowerCase().includes(name.toLowerCase()));
+        // console.log('getPelu(name) getPeluqueria: ', getPelu);
+
+        if (service !== '') getPelu = getPelu.filter(P => P.services === service);
+        // console.log('getPelu(service) getPeluqueria: ', getPelu);
+
+        if (order !== '') {
+            switch (order) {
+                case 'MaxPrice':
+                    getPelu = getPelu.sort((a, b) => {
+                        if (a.services.price < b.services.price) return 1;
+                        if (a.services.price > b.services.price) return -1;
+                        return 0;
+                    })
+                    break;
+                case 'MinPrice':
+                    getPelu = getPelu.sort((a, b) => {
+                        if (b.services.price < a.services.price) return 1;
+                        if (b.services.price > a.services.price) return -1;
+                        return 0;
+                    })
+                    break;
+                case 'MaxRating':
+                    getPelu = getPelu.sort((a, b) => {
+                        if (a.rating < b.rating) return 1;
+                        if (a.rating > b.rating) return -1;
+                        return 0;
+                    })
+                    break;
+                case 'MinRating':
+                    getPelu = getPelu.sort((a, b) => {
+                        if (b.rating < a.rating) return 1;
+                        if (b.rating > a.rating) return -1;
+                        return 0;
+                    })
+                    break;
+                default:
+                    break;
+            }
+        }
+        // console.log('getPelu(order) getPeluqueria: ', getPelu);
+
+        if (getPelu.length !== 0) return res.json(getPelu);
+        res.status(404).send('No se trajo lo de la DB');
     } catch (error) {
         console.log(error);
     }
@@ -22,14 +61,16 @@ const getPeluqueria = async (req, res) => {
 
 const getPeluqueriaById = async (req, res) => {
     const { id } = req.params;
+    // console.log('params getPeluqueriaById:', id);
     try {
-        const getPeluById = await peluquerias.findById(id)
-        .populate('services')
-        .populate('reviews')
-        .populate('stylists');
-        
-        if(getPeluById && getPeluById.exists) return res.json(getPeluById);
-        res.status(404).send('No se trajo lo de la DB o no existe'); 
+        const getPeluById = await Peluquerias.findById(id)
+            .populate('services')
+            .populate('reviews')
+            .populate('stylists');
+        // console.log('getPeluById getPeluqueriaById: ', getPeluById);
+
+        if (getPeluById && getPeluById.exists) return res.json(getPeluById);
+        res.status(404).send('No se trajo lo de la DB o no existe');
     } catch (error) {
         console.log(error);
     }

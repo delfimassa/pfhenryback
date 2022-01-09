@@ -20,6 +20,14 @@ const cliente = new Schema({
         type: String,
         required: true,
     },
+    city: {
+        type: String,
+        required: true,
+    },
+    state: {
+        type: String,
+        required: true,
+    },
     phone: {
         type: String,
         required: true,
@@ -32,10 +40,10 @@ const cliente = new Schema({
         type: Schema.Types.ObjectId,
         ref: "favorito",
     }],
-    cart:{
+    cart:[{
         type: Schema.Types.ObjectId,
         ref: "cart",
-    },
+    }],
     exists:{
         type: Boolean,
         default: true,

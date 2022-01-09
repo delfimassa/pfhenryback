@@ -1,6 +1,4 @@
-const peluquerias = require("../../../Models/Peluqueria");
-
-
+const Peluquerias = require("../../../Models/Peluqueria");
 
 const createPeluqueria = async (req, res) => {
     const {
@@ -17,7 +15,7 @@ const createPeluqueria = async (req, res) => {
         stylists  //Array de id
     } = req.body;
     try {
-        let loginLocal = new peluquerias({
+        let loginLocal = new Peluquerias({
             name,
             username,
             password,
@@ -31,7 +29,9 @@ const createPeluqueria = async (req, res) => {
             stylists
         });
         await loginLocal.save();
-        let findNew = await peluquerias.findById(loginLocal._id);
+        // console.log('loginLocal createPeluqueria:', loginLocal);
+        let findNew = await Peluquerias.findById(loginLocal._id);
+        // console.log('findNew createPeluqueria:', findNew);
         if(findNew)  return res.send('Se creo correctamente la pelu');
         res.send('No se creo correctamente la pelu');
     } catch (error) {
