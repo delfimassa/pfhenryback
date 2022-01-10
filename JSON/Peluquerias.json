@@ -1,0 +1,143 @@
+[
+  {
+    "name": "Pelu de Delfi",
+    "username": "delfimassa@gmail.com",
+    "password": "delfi1234",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3ubZ7wfah9j73eDWukuLCNBLKzI2nZQ7m0w&usqp=CAU",
+    "rating": 3,
+    "address": "Av. Siempre viva 123",
+    "city": "Capital",
+    "state": "Cordoba",
+    "phone": "3511234567",
+    "exists": true,
+    "schedule": "Lunes a Viernes de 10 a 18 hs",
+    "services": [
+      {
+        "$oid": "61d8a8f241d84b373bda3952"
+      },
+      {
+        "$oid": "61d8a8f241d84b373bda3951"
+      },
+      {
+        "$oid": "61d8a8f241d84b373bda394f"
+      }
+    ]
+  },
+  {
+    "name": "Pelu de Lucho",
+    "username": "luchito@gmail.com",
+    "password": "luchi1234",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbynRhxLNL6ur9W3OT-0LmWh0nBHefs1KNHw&usqp=CAU",
+    "rating": 3,
+    "address": "Av. Italy 1234",
+    "city": "Villa Allende",
+    "state": "Cordoba",
+    "phone": "3511224547",
+    "exists": true,
+    "schedule": "Lunes a Viernes de 12 a 21 hs",
+    "services": [
+        {
+          "$oid": "61d8a8f241d84b373bda3952"
+        },
+        {
+          "$oid": "61d8a8f241d84b373bda3951"
+        },
+        {
+          "$oid": "61d8a8f241d84b373bda394f"
+        },
+        {
+          "$oid": "61d8a8f241d84b373bda3950"
+        }
+      ]
+  },
+  {
+    "name": "Pelu de Marco",
+    "username": "marquito@gmail.com",
+    "password": "marqui1234",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX-830vRhZQMRedvhb2oiUTih7tnv7QCgYAQ&usqp=CAU",
+    "rating": 3,
+    "address": "Av. san Juan 123",
+    "phone": "3511235609",
+    "exists": true,
+    "schedule": "Lunes a Viernes de 9 a 17 hs",
+    "services": [
+        {
+          "$oid": "61d8a8f241d84b373bda3951"
+        },
+        {
+          "$oid": "61d8a8f241d84b373bda394f"
+        }
+      ]
+  },
+  {
+    "name": "Pelu de Paul",
+    "username": "paulcito@gmail.com",
+    "password": "paull1234",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_nJfqAwH80cNb22m_rJSw",
+    "rating": 3,
+    "address": "Av. Aconquija 2000",
+    "city": "Yerba Buena",
+    "state": "Tucuman",
+    "phone": "3515983670",
+    "exists": true,
+    "schedule": "Lunes a Viernes de 10 a 18 hs",
+    "services": [
+        {
+          "$oid": "61d8a8f241d84b373bda3952"
+        },
+        {
+          "$oid": "61d8a8f241d84b373bda3950"
+        },
+        {
+          "$oid": "61d8a8f241d84b373bda394f"
+        }
+      ]
+  },
+  {
+    "name": "Pelu de Maty",
+    "username": "matias@gmail.com",
+    "password": "matyy1234",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI2YGgON_8sgsn0CZCPt-md0PZ9rHAQFROlg&usqp=CAU",
+    "rating": 3,
+    "address": "Av. Del Escribano 123",
+    "city": "San Miguel del Tucuman",
+    "state": "Tucuman",
+    "phone": "3519861504",
+    "exists": true,
+    "schedule": "Lunes a Viernes de 6 a 22 hs",
+    "services": [
+        {
+          "$oid": "61d8a8f241d84b373bda3952"
+        },
+        {
+          "$oid": "61d8a8f241d84b373bda3951"
+        },
+        {
+          "$oid": "61d8a8f241d84b373bda3950"
+        }
+      ]
+  },
+  {
+    "_id":{
+      "$oid":"61d9f64b7e99a0ad764fa0cf"
+    },
+    "name":"Pelu de Carlos",
+    "username":"Carlitos@gmail.com",
+    "password":"Carlos12345",
+    "avatar":"SIN AVATAR",
+    "address":"Av. Tucuman",
+    "city":"Salsipuedes",
+    "state":"Cordoba",
+    "phone":"3515081507",
+    "schedule":"Lunes a Viernes de 10 a 18 hs",
+    "services":[
+      {"$oid":"61d8a8f241d84b373bda3950"},
+      {"$oid":"61d8a8f241d84b373bda3952"}
+    ],
+    "reviews":[],
+    "stylists":[
+      {"$oid":"61d9f32bed01e102f342ba5d"}
+    ],
+    "exists":true
+  }
+]
