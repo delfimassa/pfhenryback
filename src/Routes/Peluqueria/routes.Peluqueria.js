@@ -4,7 +4,8 @@ const {
     deletePeluqueria,
     getPeluqueriaById,
     getPeluqueria,
-    updatePeluqueria
+    updatePeluqueria,
+    updateRating
 } = require('./Controllers/all.controllers');
 const router = Router();
 
@@ -13,6 +14,7 @@ router.get('/', getPeluqueria);
 router.get('/:id', getPeluqueriaById);
 router.post('/create', createPeluqueria);
 router.put('/update', updatePeluqueria);
+router.put('/update/rating/:id', updateRating);
 router.put('/delete', deletePeluqueria);
 
 module.exports = router;
