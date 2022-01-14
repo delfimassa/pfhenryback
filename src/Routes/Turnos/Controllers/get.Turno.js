@@ -3,12 +3,14 @@ const Turno = require("../../../Models/Turno");
 const getTurno = async (req, res) => {
     const { peluqueria } = req.body;
     try {
-        let findTurno = await Turno.find({ vacancy: false, peluqueria: peluqueria })
+        let findTurno = await Turno.find({ vacancy: false })
         .populate('peluqueria', ['name'])
         .populate('service', ['name'])
         .populate('stylist', ['name']);
 
-        if(findTurno)  return res.json(findTurno);
+        let filtered = findTurno.filter(t => t.peluqueria.name === peluqueria);
+
+        if(filtered)  return res.json(filtered);
         res.status(404).send('Hubo un error al traer los turnos');
     } catch (error) {
         console.log(error);

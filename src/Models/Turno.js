@@ -21,7 +21,7 @@ const turno = new Schema({
     },
     peluqueria:{
         type: Schema.Types.ObjectId,
-        ref: 'peluqueria',
+        ref: 'peluquerias',
         required: true
     },
     vacancy:{
