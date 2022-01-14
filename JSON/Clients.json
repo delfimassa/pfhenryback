@@ -1,0 +1,18 @@
+[
+    {
+        "_id":{
+            "$oid":"61da302b07a4f6f89bd1783e"
+        },
+        "name":"Marco",
+        "username":"marco@gmail.com",
+        "password":"123456789",
+        "address":"Av. San Juan 2000",
+        "state":"Cordoba",
+        "city":"capital",
+        "phone":"351124567",
+        "purhcaseHistory":[],
+        "favs":[],
+        "exists":true,
+        "cart":[]
+    }
+]

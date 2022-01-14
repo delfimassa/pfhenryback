@@ -2,18 +2,22 @@ const pkg = require('mongoose');
 const {Schema, model} = pkg;
 
 const cart = new Schema({
-    total: {
-        type: Number,
+    price: {
+        type: String,
         require: true
+    },
+    total: {
+        type: String,
+        required: true
     },
     service: {
         type: Schema.Types.ObjectId,
         ref: "servicio",
         required: true
     },
-    exists: {
-        type: Boolean,
-        default: true
+    client: {
+        type: String,
+        required: true
     }
 })
 

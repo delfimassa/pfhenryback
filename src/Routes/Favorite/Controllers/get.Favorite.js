@@ -1,23 +1,18 @@
-
-
+const Favorito = require("../../../Models/Favorito");
 
 const getFavorite = async (req, res) => {
+    const { client } = req.body;
     try {
-        
-    } catch (error) {
-        console.log(error);
-    }
-};
+        let findFav = await Favorito.find({ client: client })
+        .populate('peluqueria');
 
-const getFavoriteById = async (req, res) => {
-    try {
-        
+        if(findFav)  return res.json(findFav);
+        res.send('Hubo un problema al traer los favoritos');
     } catch (error) {
         console.log(error);
     }
 };
 
 module.exports = {
-    getFavorite,
-    getFavoriteById
+    getFavorite
 };

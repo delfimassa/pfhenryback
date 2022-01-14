@@ -2,10 +2,9 @@ const pkg = require('mongoose');
 const { Schema, model } = pkg;
 
 const favorito = new Schema({
-    // username es email
-    user: {
-        type: Schema.Types.ObjectId,
-        ref: "cliente",
+    client: {
+        type: String,
+        required: true
     },
     peluqueria:[{
         type: Schema.Types.ObjectId,
