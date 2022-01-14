@@ -17,8 +17,8 @@ const createCart = async (req, res) => {
         // let servicePelu;
         // for(let i = 0; i < findPelu.services.length; i++) {
         // }
-        let servicePelu = findPelu.services.filter(s => s.price === '$2.500'); 
-        console.log('servicePelu createCart: ', servicePelu);
+        // let servicePelu = findPelu.services.filter(s => s.price === '$2.500'); 
+        // console.log('servicePelu createCart: ', servicePelu);
         
         if(servicePelu) {
             let newCart = new Carrito({

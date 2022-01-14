@@ -8,7 +8,7 @@ const review = new Schema({
     },
     client:{
         type: Schema.Types.ObjectId,
-        ref: "client",
+        ref: "cliente",
         required: true  
     },
     comment:{
