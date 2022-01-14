@@ -6,15 +6,16 @@ const bodyParser = require('body-parser')
 
 const config = require('./config');
 // IMPORTS ROUTES
-const CartRoutes = require('./routes/Cart/index.Cart');
-const ClientRoutes = require('./routes/Clients/index.Clients');
-const FavoriteRoutes = require('./routes/Favorite/index.Favorite');
+const CartRoutes = require('./Routes/Cart/index.Cart');
+const ClientRoutes = require('./Routes/Clients/index.Clients');
+const FavoriteRoutes = require('./Routes/Favorite/index.Favorite');
 const MPRoutes = require('./Routes/MP/index.MP');
-const PeluqueriaRoutes = require('./routes/Peluqueria/index.Peluqueria');
-const PeluqueroRoutes = require('./routes/Peluquero/index.Peluquero');
-const TicketRoutes = require('./routes/Ticket/index.Ticket');
-const ServiceRoutes = require('./routes/Service/index.Service');
-const ReviewRoutes = require('./routes/Review/index.Review');
+const PeluqueriaRoutes = require('./Routes/Peluqueria/index.Peluqueria');
+const PeluqueroRoutes = require('./Routes/Peluquero/index.Peluquero');
+const TicketRoutes = require('./Routes/Ticket/index.Ticket');
+const ServiceRoutes = require('./Routes/Service/index.Service');
+const ReviewRoutes = require('./Routes/Review/index.Review');
+const TurnoRoutes = require('./Routes/Turnos/index.Turno')
 
 const app = express();
 // require("./routes/User/Controllers/middleware")
@@ -44,5 +45,6 @@ app.use('/', ReviewRoutes);
 app.use('/', TicketRoutes);
 app.use('/', PeluqueroRoutes);
 app.use('/', ServiceRoutes);
+app.use('/', TurnoRoutes);
 
 module.exports = app;
