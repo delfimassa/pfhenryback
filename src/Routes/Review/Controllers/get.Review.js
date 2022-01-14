@@ -1,17 +1,12 @@
-
-
+const Review = require("../../../Models/Review");
 
 const getReview = async (req, res) => {
     try {
-        
-    } catch (error) {
-        console.log(error);
-    }
-};
+        let findRev = await Review.find()
+        .populate('client', ['name', 'username']);
 
-const getReviewById = async (req,res) => {
-    try {
-        
+        if(findRev) return res.json(findRev);
+        res.status(404).send('Hubo un problema al traer las review');
     } catch (error) {
         console.log(error);
     }
@@ -19,5 +14,4 @@ const getReviewById = async (req,res) => {
 
 module.exports = {
     getReview,
-    getReviewById
 };

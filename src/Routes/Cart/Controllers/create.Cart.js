@@ -12,8 +12,12 @@ const createCart = async (req, res) => {
         let findPelu = await Peluqueria.findById(peluqeria)
         .populate('services.service');
         console.log('findPelu createCart: ', findPelu);
+        console.log('service createCart: ', findPelu.services[0]);
 
-        let servicePelu = findPelu.services.filter(s => s.service.name === service); 
+        // let servicePelu;
+        // for(let i = 0; i < findPelu.services.length; i++) {
+        // }
+        let servicePelu = findPelu.services.filter(s => s.price === '$2.500'); 
         console.log('servicePelu createCart: ', servicePelu);
         
         if(servicePelu) {

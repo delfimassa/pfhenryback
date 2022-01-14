@@ -3,19 +3,23 @@ const Review = require("../../../Models/Review");
 const createReview = async (req, res) => {
     const {
         rating,
-        user,
+        client,  //Id del cliente
         comment
     } = req.body
     try {
-        let newreview = new Review({
+        let find = await Review.findOne({client: client});
+
+        if(find) return res.send('Ya diste una review');
+
+        let newReview = new Review({
             rating,
-            user,
+            client,
             comment
         })
-        await newreview.save();
+        await newReview.save();
 
-        let findNew = await Review.findById(newreview._id);
-        if(findNew) return res.send('Se creo correctamente la review');
+        // let findNew = await Review.findById(newreview._id);
+        if(newReview) return res.send('Se creo correctamente la review');
         res.status(404).send('Hubo un error al crear la review');
     } catch (error) {
         console.log(error);
