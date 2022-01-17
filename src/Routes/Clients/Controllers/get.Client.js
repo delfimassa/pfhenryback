@@ -7,7 +7,7 @@ const getClient = async (req, res) => {
         let findClient = await Cliente.find({ exists: true });
         // console.log('findClient getClient:', findClient);
         
-        if(name !== '')  findClient = findClient.filter(p => p.name.toLowerCase().includes(name.toLowerCase()));
+        // if(name !== '')  findClient = findClient.filter(p => p.name.toLowerCase().includes(name.toLowerCase()));
         // console.log('name getClient: ', findClient);
         
         if(findClient.length !== 0) return res.json(findClient);

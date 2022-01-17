@@ -11,15 +11,31 @@
     "phone": "3511234567",
     "exists": true,
     "schedule": "Lunes a Viernes de 10 a 18 hs",
+    "numRating": {
+      "uno": 1,
+      "dos": 1,
+      "tres": 1,
+      "cuatro": 1,
+      "cinco": 1
+    },
     "services": [
       {
-        "$oid": "61d8a8f241d84b373bda3952"
+        "price": "$850",
+        "service": {
+          "$oid": "61d8a8f241d84b373bda3952"
+        }
       },
       {
-        "$oid": "61d8a8f241d84b373bda3951"
+        "price": "$4500",
+        "service": {
+          "$oid": "61d8a8f241d84b373bda3951"
+        }
       },
       {
-        "$oid": "61d8a8f241d84b373bda394f"
+        "price": "$500",
+        "service": {
+          "$oid": "61d8a8f241d84b373bda394f"
+        }
       }
     ]
   },
@@ -35,20 +51,39 @@
     "phone": "3511224547",
     "exists": true,
     "schedule": "Lunes a Viernes de 12 a 21 hs",
+    "numRating": {
+      "uno": 1,
+      "dos": 1,
+      "tres": 1,
+      "cuatro": 1,
+      "cinco": 1
+    },
     "services": [
-        {
+      {
+        "price": "$850",
+        "service": {
           "$oid": "61d8a8f241d84b373bda3952"
-        },
-        {
+        }
+      },
+      {
+        "price": "$4500",
+        "service": {
           "$oid": "61d8a8f241d84b373bda3951"
-        },
-        {
+        }
+      },
+      {
+        "price": "$500",
+        "service": {
           "$oid": "61d8a8f241d84b373bda394f"
-        },
-        {
+        }
+      },
+      {
+        "price": "$2500",
+        "service": {
           "$oid": "61d8a8f241d84b373bda3950"
         }
-      ]
+      }
+    ]
   },
   {
     "name": "Pelu de Marco",
@@ -58,16 +93,32 @@
     "rating": 3,
     "address": "Av. san Juan 123",
     "phone": "3511235609",
+    "city": "Capital",
+    "state": "Cordoba",
     "exists": true,
+    "reviews": [],
     "schedule": "Lunes a Viernes de 9 a 17 hs",
+    "numRating": {
+      "uno": 1,
+      "dos": 1,
+      "tres": 1,
+      "cuatro": 1,
+      "cinco": 1
+    },
     "services": [
-        {
+      {
+        "price": "$4500",
+        "service": {
           "$oid": "61d8a8f241d84b373bda3951"
-        },
-        {
+        }
+      },
+      {
+        "price": "$500",
+        "service": {
           "$oid": "61d8a8f241d84b373bda394f"
         }
-      ]
+      }
+    ]
   },
   {
     "name": "Pelu de Paul",
@@ -80,18 +131,35 @@
     "state": "Tucuman",
     "phone": "3515983670",
     "exists": true,
+    "reviews": [],
     "schedule": "Lunes a Viernes de 10 a 18 hs",
+    "numRating": {
+      "uno": 1,
+      "dos": 1,
+      "tres": 1,
+      "cuatro": 1,
+      "cinco": 1
+    },
     "services": [
-        {
+      {
+        "price": "$850",
+        "service": {
           "$oid": "61d8a8f241d84b373bda3952"
-        },
-        {
+        }
+      },
+      {
+        "price": "$2500",
+        "service": {
           "$oid": "61d8a8f241d84b373bda3950"
-        },
-        {
+        }
+      },
+      {
+        "price": "$500",
+        "service": {
           "$oid": "61d8a8f241d84b373bda394f"
         }
-      ]
+      }
+    ]
   },
   {
     "name": "Pelu de Maty",
@@ -104,40 +172,76 @@
     "state": "Tucuman",
     "phone": "3519861504",
     "exists": true,
+    "reviews": [],
     "schedule": "Lunes a Viernes de 6 a 22 hs",
+    "numRating": {
+      "uno": 1,
+      "dos": 1,
+      "tres": 1,
+      "cuatro": 1,
+      "cinco": 1
+    },
     "services": [
-        {
+      {
+        "price": "$850",
+        "service": {
           "$oid": "61d8a8f241d84b373bda3952"
-        },
-        {
+        }
+      },
+      {
+        "price": "$4500",
+        "service": {
           "$oid": "61d8a8f241d84b373bda3951"
-        },
-        {
+        }
+      },
+      {
+        "price": "$2500",
+        "service": {
           "$oid": "61d8a8f241d84b373bda3950"
         }
-      ]
+      }
+    ]
   },
   {
-    "_id":{
-      "$oid":"61d9f64b7e99a0ad764fa0cf"
+    "_id": {
+      "$oid": "61d9f64b7e99a0ad764fa0cf"
     },
-    "name":"Pelu de Carlos",
-    "username":"Carlitos@gmail.com",
-    "password":"Carlos12345",
-    "avatar":"SIN AVATAR",
-    "address":"Av. Tucuman",
-    "city":"Salsipuedes",
-    "state":"Cordoba",
-    "phone":"3515081507",
-    "schedule":"Lunes a Viernes de 10 a 18 hs",
-    "services":[
-      {"$oid":"61d8a8f241d84b373bda3950"},
-      {"$oid":"61d8a8f241d84b373bda3952"}
+    "name": "Pelu de Carlos",
+    "username": "Carlitos@gmail.com",
+    "password": "Carlos12345",
+    "avatar": "SIN AVATAR",
+    "address": "Av. Tucuman",
+    "city": "Salsipuedes",
+    "state": "Cordoba",
+    "phone": "3515081507",
+    "schedule": "Lunes a Viernes de 10 a 18 hs",
+    "numRating": {
+      "uno": 1,
+      "dos": 1,
+      "tres": 1,
+      "cuatro": 1,
+      "cinco": 1
+    },
+    "services": [
+      {
+        "price": "$2500",
+        "service": {
+          "$oid": "61d8a8f241d84b373bda3950"
+        }
+      },
+      {
+        "price": "$850",
+        "service": {
+          "$oid": "61d8a8f241d84b373bda3952"
+        }
+      }
     ],
-    "reviews":[],
-    "stylists":[
-      {"$oid":"61d9f32bed01e102f342ba5d"}
+    "reviews": [],
+    "stylists": [
+      {
+        "$oid": "61d9f32bed01e102f342ba5d"
+      }
     ],
-    "exists":true
+    "exists": true
   }
 ]

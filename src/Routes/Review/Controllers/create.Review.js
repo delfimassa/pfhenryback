@@ -1,21 +1,33 @@
+const { default: axios } = require("axios");
 const Review = require("../../../Models/Review");
 
 const createReview = async (req, res) => {
     const {
         rating,
-        user,
-        comment
+        client,  // Id del cliente
+        comment,
+        peluqueria // Id de peluqueria
     } = req.body
+    // console.log('body createReview: ', rating, client, comment);
     try {
-        let newreview = new Review({
+        let find = await Review.findOne({client: client});
+        // console.log('find createReview: ', find);
+        
+        if(find) return res.send('Ya diste una review');
+        
+        let newReview = new Review({
             rating,
-            user,
-            comment
-        })
-        await newreview.save();
+            client,
+            comment,
+            peluqueria
+        });
+        await newReview.save();
+        // console.log('newReview createReview: ', newReview);
 
-        let findNew = await Review.findById(newreview._id);
-        if(findNew) return res.send('Se creo correctamente la review');
+        if(newReview) {
+            await axios.put(`http://localhost:4000/peluqueria/update/rating/${id}`, { newReview });
+            return res.send('Se creo correctamente la review');
+        }
         res.status(404).send('Hubo un error al crear la review');
     } catch (error) {
         console.log(error);

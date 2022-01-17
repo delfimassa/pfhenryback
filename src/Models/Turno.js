@@ -19,13 +19,17 @@ const turno = new Schema({
         type: Schema.Types.ObjectId,
         ref: "peluquero",
     },
+    peluqueria:{
+        type: Schema.Types.ObjectId,
+        ref: 'peluquerias',
+        required: true
+    },
     vacancy:{
         type: Boolean,
         default: true,
     },
-    exists: {
-        type: Boolean,
-        default: true
+    phone:{
+        type: String
     }
 })
 

@@ -44,9 +44,15 @@ const peluquerias = new Schema({
         required: true,
     },
     services: [{
-        type: Schema.Types.ObjectId,
-        ref: "servicio",
-        required: true
+        price: {
+            type: String,
+            required: true
+        },
+        service: {
+            type: Schema.Types.ObjectId,
+            ref: "servicio",
+            required: true
+        }
     }],
     reviews: [{
         type: Schema.Types.ObjectId,
@@ -56,6 +62,28 @@ const peluquerias = new Schema({
         type: Schema.Types.ObjectId,
         ref: "peluquero",
     }],
+    numRating: {
+        uno: {
+            type: Number,
+            default: 1
+        },
+        dos: {
+            type: Number,
+            default: 1
+        },
+        tres: {
+            type: Number,
+            default: 1
+        },
+        cuatro: {
+            type: Number,
+            default: 1
+        },
+        cinco: {
+            type: Number,
+            default: 1
+        },
+    },
     exists:{
         type: Boolean,
         default: true,

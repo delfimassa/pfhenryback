@@ -1,7 +1,7 @@
 const { createPeluqueria } = require('./create.Peluqueria');
 const { deletePeluqueria } = require('./delete.Peluqueria');
 const { getPeluqueria, getPeluqueriaById } = require('./get.Peluqueria');
-const { updatePeluqueria } = require('./update.Peluqueria');
+const { updatePeluqueria, updateRating } = require('./update.Peluqueria');
 
 
 module.exports = {
@@ -9,5 +9,6 @@ module.exports = {
     deletePeluqueria,
     getPeluqueriaById,
     getPeluqueria,
-    updatePeluqueria
+    updatePeluqueria,
+    updateRating
 };

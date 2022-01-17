@@ -7,7 +7,7 @@ const getService = async (req, res) => {
         let findService = await Servicios.find({ exists: true })
         // console.log('findService getService:', findService);
         
-        if(name !== '') findService = findService.filter(s => s.name.toLowerCase().includes(name.toLowerCase()));
+        // if(name !== '') findService = findService.filter(s => s.name.toLowerCase().includes(name.toLowerCase()));
         // console.log('findService(name) getService:', findService);
 
         if(findService.length !== 0)  return res.json(findService);
