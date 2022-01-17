@@ -4,22 +4,26 @@ const Review = require("../../../Models/Review");
 const createReview = async (req, res) => {
     const {
         rating,
-        client,  //Id del cliente
-        comment
+        client,  // Id del cliente
+        comment,
+        peluqueria // Id de peluqueria
     } = req.body
+    // console.log('body createReview: ', rating, client, comment);
     try {
         let find = await Review.findOne({client: client});
-
+        // console.log('find createReview: ', find);
+        
         if(find) return res.send('Ya diste una review');
-
+        
         let newReview = new Review({
             rating,
             client,
-            comment
+            comment,
+            peluqueria
         });
         await newReview.save();
+        // console.log('newReview createReview: ', newReview);
 
-        // let findNew = await Review.findById(newreview._id);
         if(newReview) {
             await axios.put(`http://localhost:4000/peluqueria/update/rating/${id}`, { newReview });
             return res.send('Se creo correctamente la review');

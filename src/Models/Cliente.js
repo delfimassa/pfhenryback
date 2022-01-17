@@ -9,8 +9,7 @@ const cliente = new Schema({
     // username es email
     username: {
         type: String,
-        required: true,
-        // unique: true
+        required: true
     },
     password: {
         type: String,
