@@ -1,3 +1,4 @@
+const Favorito = require("../../../Models/Favorito");
 
 const addFavorite = async (req, res) => {
     const { id } = req.body;

@@ -18,19 +18,19 @@ const cliente = new Schema({
     },
     address: {
         type: String,
-        required: true,
+        // required: true,
     },
     city: {
         type: String,
-        required: true,
+        // required: true,
     },
     state: {
         type: String,
-        required: true,
+        // required: true,
     },
     phone: {
         type: String,
-        required: true,
+        // required: true,
     },
     purhcaseHistory:[{
         type: Schema.Types.ObjectId,
