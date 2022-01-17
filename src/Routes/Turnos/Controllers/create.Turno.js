@@ -1,8 +1,6 @@
 const { default: axios } = require("axios");
 const Turno = require("../../../Models/Turno");
 
-
-
 const createTurno = async (req, res) => {
     const {
         service, // Id del servicio
@@ -12,8 +10,9 @@ const createTurno = async (req, res) => {
         peluqueria, // Id de la peluqueria
         phone
     } = req.body;
+    // console.log('body createTurno: ', service, time, date, stylist, peluqueria, phone);
     try {
-        let newturno = new Turno({
+        let newTurno = new Turno({
             service,
             time,
             date,
@@ -21,10 +20,11 @@ const createTurno = async (req, res) => {
             peluqueria,
             phone
         });
-        await newturno.save();
+        await newTurno.save();
+        // console.log('newTurno createTurno: ', newTurno);
         
-        if(newturno) {
-            let id = newturno._id;
+        if(newTurno) {
+            let id = newTurno._id;
             await axios.put(`http://localhost:4000/turno/update`, { id });
             return res.send('Se creo correctamente el turno');
         }

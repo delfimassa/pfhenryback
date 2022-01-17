@@ -4,7 +4,7 @@ const { Schema, model } = pkg;
 const favorito = new Schema({
     client: {
         type: String,
-        required: true
+        // required: true
     },
     peluqueria:[{
         type: Schema.Types.ObjectId,

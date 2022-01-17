@@ -16,6 +16,7 @@ const updatePeluquero = async (req, res) => {
         // console.log('update updatePeluquero:', update);
 
         if(update) return res.send(`Se actualizo el peluquero ${upadte.name}`);
+        res.status(404).send('Hubo un error al acrualizar el peluquero');
     } catch (error) {
         console.log(error);
     }
