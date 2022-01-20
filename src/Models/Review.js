@@ -11,6 +11,9 @@ const review = new Schema({
         ref: "cliente",
         required: true  
     },
+    username:{
+        type: String,
+    },
     peluqueria: {
         type: String,
         required: true
