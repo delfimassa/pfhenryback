@@ -10,7 +10,7 @@
     "state": "Cordoba",
     "phone": "3511234567",
     "exists": true,
-    "schedule": "Lunes a Viernes de 10 a 18 hs",
+    "schedule": "Miercoles a Viernes de 10 a 18 hs",
     "numRating": {
       "uno": 1,
       "dos": 1,
@@ -50,7 +50,7 @@
     "state": "Cordoba",
     "phone": "3511224547",
     "exists": true,
-    "schedule": "Lunes a Viernes de 12 a 21 hs",
+    "schedule": "Lunes a Sabado de 12 a 21 hs",
     "numRating": {
       "uno": 1,
       "dos": 1,

@@ -1,5 +1,6 @@
 const { default: axios } = require("axios");
 const Favorito = require("../../../Models/Favorito");
+const Cliente = require("../../../Models/Cliente");
 
 const createFavorite = async (req, res) => {
     const {
@@ -8,6 +9,8 @@ const createFavorite = async (req, res) => {
     } = req.body;
     // console.log('body createFavorite: ', client, peluqueria);
     try {
+        let findClient = await Cliente.findOne({ username: client });
+
         let findFav = await Favorito.findOne({ client: client, peluqueria: peluqueria });
         // console.log('findFav createFavorite: ', findFav);
 
@@ -24,7 +27,10 @@ const createFavorite = async (req, res) => {
         await newFavorite.save();
         // console.log('newFavorite createFavorite: ', newFavorite);
 
-        if(newFavorite) return res.send('se agrego coorectamente a favoritos');
+        if(newFavorite) {
+            await axios.put(`http://localhost:4000/clients/update/addFav/${findClient._id}`, { newFavorite });
+            return res.send('Se agrego coorectamente a favoritos');
+        }
         res.status(404).send('Hubo un problema al agreagar a favoritos')
     } catch (error) {
         console.log(error);
