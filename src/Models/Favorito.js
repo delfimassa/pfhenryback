@@ -6,10 +6,10 @@ const favorito = new Schema({
         type: String,
         // required: true
     },
-    peluqueria:[{
+    peluqueria:{
         type: Schema.Types.ObjectId,
         ref: "peluquerias",
-    }],
+    },
     exists:{
         type: Boolean,
         default: true,

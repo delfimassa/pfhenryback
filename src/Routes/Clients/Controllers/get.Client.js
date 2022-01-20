@@ -18,15 +18,14 @@ const getClient = async (req, res) => {
 };
 
 const getClientById = async (req, res) => {
-    const { id } = req.params;
+    const { username } = req.params;
     // console.log('params getClientById:', id);
     try {
-        let findById = await Cliente.findById(id)
+        let findById = await Cliente.findOne({username: username})
         // .populate('purhcaseHistory')
-        // .populate('cart')
-        // .populate('favs');
-        // console.log('findById getClientById:', findById);
-
+        .populate('cart')
+        .populate('favs')
+        console.log('findById getClientById:', findById);
         if(findById && findById.exists)  return res.json(findById);
         res.status(404).send('Hubo un error al traer el cliente');
     } catch (error) {

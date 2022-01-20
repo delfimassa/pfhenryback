@@ -11,7 +11,7 @@ const addFavorite = async (req, res) => {
         // console.log('addFav addFavorite: ', addFav);
 
         if(addFav) return res.send('Se agrego correctamente a favoritos');
-        return res.send('hubo un error al agreagar a favoritos')
+        return res.tatus(404).send('hubo un error al agreagar a favoritos')
     } catch (error) {
         console.log(error);
     }

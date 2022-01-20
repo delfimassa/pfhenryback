@@ -26,8 +26,27 @@ const updateClient = async (req, res) => {
     } catch (error) {
         console.log(error);
     }
+};  
+
+const addFav = async (req, res) => {
+    const { id } = req.params;
+    const { newFavorite } = req.body;
+    try {
+        let find = await Cliente.findById(id);
+
+        let add = await Cliente.findByIdAndUpdate(id, {
+            favs:[...find.favs, newFavorite._id]
+        }, { new: true });
+        await add.save();
+        
+        if(add)  return res.send('Se agrego correctamente a favoritos');
+        res.status(404).send('Hubo un error al qereer agreagar a favoritos');
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 module.exports = {
-    updateClient
+    updateClient,
+    addFav
 };

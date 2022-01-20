@@ -15,10 +15,10 @@ const turno = new Schema({
         type: String,
         required: true
     },
-    stylist:{
-        type: Schema.Types.ObjectId,
-        ref: "peluquero",
-    },
+    // stylist:{
+    //     type: Schema.Types.ObjectId,
+    //     ref: "peluquero",
+    // },
     peluqueria:{
         type: Schema.Types.ObjectId,
         ref: 'peluquerias',
@@ -28,7 +28,7 @@ const turno = new Schema({
         type: Boolean,
         default: true,
     },
-    phone:{
+    phone:{ //del cliente? faltaria el nombre, id algo mas del client
         type: String
     }
 })

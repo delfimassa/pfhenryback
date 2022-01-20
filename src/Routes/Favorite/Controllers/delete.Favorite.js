@@ -10,7 +10,7 @@ const deleteFavorite = async (req, res) => {
         await deleted.save();
         // console.log('deleted deleteFavorite: ', deleted);
 
-        if(deleted) return res.send(`Se quito ${deleted.peluqueria[0].name} de favoritos`);
+        if(deleted) return res.send(`Se quito la peluquería de favoritos`);
         res.status(404).send('Hubo un error al quitar de favoritos');
     } catch (error) {
         console.log(error);
