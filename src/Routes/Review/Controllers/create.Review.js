@@ -5,16 +5,17 @@ const Cliente = require("../../../Models/Cliente");
 const createReview = async (req, res) => {
   const {
     rating,
-    clientt, // email del cliente 
+    client, // email del cliente 
     comment,
     peluqueria, // Id de peluqueria
   } = req.body;
-  console.log("lo que llega del front: ", rating, clientt, comment, peluqueria);  
+  console.log("lo que llega del front: ", rating, client, comment, peluqueria);  
+  let emailClient = client;
   
   try {
     console.log("Entro al try");
 
-    let findClient = await Cliente.findOne({ username: clientt });
+    let findClient = await Cliente.findOne({ username: client });
     console.log("cliente encontrado con el email: ", findClient);
     let idClient = findClient._id;
     console.log('Id del cliente', idClient);
@@ -26,7 +27,7 @@ const createReview = async (req, res) => {
     let newReview = new Review({
       rating,
       client: idClient,
-      username: clientt,
+      username: emailClient,
       comment,
       peluqueria: peluqueria.id,
     });
