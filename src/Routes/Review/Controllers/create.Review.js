@@ -18,6 +18,7 @@ const createReview = async (req, res) => {
     let findClient = await Cliente.findOne({ username: client });
     console.log("cliente encontrado con el email: ", findClient);
     let idClient = findClient._id;
+    let nameClient = findClient.name;
     console.log('Id del cliente', idClient);
 
     let find = await Review.findOne({ client: idClient, peluqueria: peluqueria.id });
@@ -27,7 +28,7 @@ const createReview = async (req, res) => {
     let newReview = new Review({
       rating,
       client: idClient,
-      username: emailClient,
+      username: nameClient,
       comment,
       peluqueria: peluqueria.id,
     });
