@@ -71,54 +71,59 @@ const updatePeluqueria = async (req, res) => {
 };
 
 const updateRating = async (req, res) => {
-  const id = req.params.id;
+  let id = req.params.id;
   console.log("id de la peluqueria q llega x params: ", id);
-  const { newReview } = req.body;
-  console.log("review que llego  xbody: ", newReview);
+  let { newReview } = req.body;
+  console.log("review que llego xbody: ", newReview);
   try {
-    let find = await Peluqueria.findById(id);
-    console.log("Peluqueria encontrada con ese id que llego x params: ", find);
+    let peluToUpdate = await Peluqueria.findById(id);
+    console.log("Peluqueria encontrada con ese id que llego x params: ", peluToUpdate);
 
-    if (find) {
-      let { cinco, cuatro, tres, dos, uno } = find.numRating;
+    if (peluToUpdate) {
+      let { cinco, cuatro, tres, dos, uno } = peluToUpdate.numRating;
       let count;
       let change;
       switch (newReview.rating) {
         case 1:
-          count = uno + 1;
+          uno = uno+1;
           change = "uno";
+          count = uno;
           break;
         case 2:
-          count = dos + 1;
+          dos= dos+1
           change = "dos";
+          count = dos;
           break;
         case 3:
-          count = tres + 1;
+          tres = tres + 1;
           change = "tres";
+          count = tres;
           break;
         case 4:
-          count = cuatro + 1;
+          cuatro = cuatro + 1;
           change = "cuatro";
+          count = cuatro;
           break;
         case 5:
-          count = cinco + 1;
+          cinco = cinco + 1;
           change = "cinco";
+          count = cinco;
           break;
         default:
           return res.send("Hubo un error, los nros tiene que ser entre 1 y 5");
       }
       let multi = (5 * cinco) + (4 * cuatro) + (3 * tres) + (2 * dos) + (1 * uno);
       let sum = cinco + cuatro + tres + dos + uno;
-      const newRating = multi / sum;
+      let newRating = multi / sum  || 0;
 
       let update = await Peluqueria.findByIdAndUpdate(id, {
         rating: newRating,
         numRating: {
-          ...find.numRating,
+          ...peluToUpdate.numRating,
           [change]: count,
         },
-        reviews: [...find.reviews, newReview._id], ///
-      });
+        reviews: [...peluToUpdate.reviews, newReview._id], ///
+      },{new:true});
       await update.save();
       console.log('update updateRating: ', update);
 
