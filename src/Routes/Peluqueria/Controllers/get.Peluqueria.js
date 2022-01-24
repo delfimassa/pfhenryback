@@ -65,7 +65,7 @@ const getPeluqueriaById = async (req, res) => {
     // console.log('params getPeluqueriaById:', id);
     try {
         const getPeluById = await Peluquerias.findById(id)
-            .populate('services')
+            .populate('services.service')
             .populate('reviews')
             .populate('turnos')
             .populate('stylists');
