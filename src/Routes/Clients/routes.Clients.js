@@ -8,7 +8,7 @@ const {
     addFav
 } = require('./Controllers/all.controllers');
 
-const router = Router();
+const router = Router(); 
 
 
 //   / clients

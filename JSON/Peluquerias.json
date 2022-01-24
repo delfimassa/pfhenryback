@@ -4,7 +4,7 @@
     "username": "delfimassa@gmail.com",
     "password": "delfi1234",
     "avatar": "https://image.freepik.com/foto-gratis/bella-mujer-rizos-maquillaje_144627-3577.jpg",
-    "rating": 3,
+    "rating": 60,
     "address": "Av. Siempre viva 123",
     "city": "Capital",
     "state": "Cordoba",
@@ -21,11 +21,11 @@
     ],
     "turnos": [],
     "numRating": {
-      "uno": 1,
-      "dos": 1,
-      "tres": 1,
-      "cuatro": 1,
-      "cinco": 1
+      "veinte": 1,
+      "cuarenta": 1,
+      "sesenta": 1,
+      "ochenta": 1,
+      "cien": 1
     },
     "services": [
       {
@@ -53,7 +53,7 @@
     "username": "luchito@gmail.com",
     "password": "luchi1234",
     "avatar": "https://image.freepik.com/foto-gratis/joven-peluqueria-corte-pelo_1303-26254.jpg",
-    "rating": 3,
+    "rating": 60,
     "address": "Av. Italy 1234",
     "city": "Villa Allende",
     "state": "Cordoba",
@@ -70,11 +70,11 @@
     ],
     "turnos": [],
     "numRating": {
-      "uno": 1,
-      "dos": 1,
-      "tres": 1,
-      "cuatro": 1,
-      "cinco": 1
+      "veinte": 1,
+      "cuarenta": 1,
+      "sesenta": 1,
+      "ochenta": 1,
+      "cien": 1
     },
     "services": [
       {
@@ -108,7 +108,7 @@
     "username": "marquito@gmail.com",
     "password": "marqui1234",
     "avatar": "https://images.pexels.com/photos/897262/pexels-photo-897262.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "rating": 3,
+    "rating": 60,
     "address": "Av. san Juan 123",
     "phone": "3511235609",
     "city": "Capital",
@@ -126,11 +126,11 @@
     ],
     "turnos": [],
     "numRating": {
-      "uno": 1,
-      "dos": 1,
-      "tres": 1,
-      "cuatro": 1,
-      "cinco": 1
+      "veinte": 1,
+      "cuarenta": 1,
+      "sesenta": 1,
+      "ochenta": 1,
+      "cien": 1
     },
     "services": [
       {
@@ -152,7 +152,7 @@
     "username": "paulcito@gmail.com",
     "password": "paull1234",
     "avatar": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1011&q=80",
-    "rating": 3,
+    "rating": 60,
     "address": "Av. Aconquija 2000",
     "city": "Yerba Buena",
     "state": "Tucuman",
@@ -170,11 +170,11 @@
     ],
     "turnos": [],
     "numRating": {
-      "uno": 1,
-      "dos": 1,
-      "tres": 1,
-      "cuatro": 1,
-      "cinco": 1
+      "veinte": 1,
+      "cuarenta": 1,
+      "sesenta": 1,
+      "ochenta": 1,
+      "cien": 1
     },
     "services": [
       {
@@ -202,7 +202,7 @@
     "username": "matias@gmail.com",
     "password": "matyy1234",
     "avatar": "https://image.freepik.com/foto-gratis/hombre-guapo-barberia-afeitado-barba_1303-26258.jpg",
-    "rating": 3,
+    "rating": 60,
     "address": "Av. Del Escribano 123",
     "city": "San Miguel del Tucuman",
     "state": "Tucuman",
@@ -225,11 +225,11 @@
     ],
     "turnos": [],
     "numRating": {
-      "uno": 1,
-      "dos": 1,
-      "tres": 1,
-      "cuatro": 1,
-      "cinco": 1
+      "veinte": 1,
+      "cuarenta": 1,
+      "sesenta": 1,
+      "ochenta": 1,
+      "cien": 1
     },
     "services": [
       {
@@ -274,13 +274,13 @@
       "17:30"
     ],
     "turnos": [],
-    "rating": 3,
+    "rating": 60,
     "numRating": {
-      "uno": 1,
-      "dos": 1,
-      "tres": 1,
-      "cuatro": 1,
-      "cinco": 1
+      "veinte": 1,
+      "cuarenta": 1,
+      "sesenta": 1,
+      "ochenta": 1,
+      "cien": 1
     },
     "services": [
       {

@@ -70,25 +70,25 @@ const peluquerias = new Schema({
         ref: "peluquero",
     }],
     numRating: {
-        uno: {
+        veinte: {
             type: Number,
-            default: 1
+            default: 20
         },
-        dos: {
+        cuarenta: {
             type: Number,
-            default: 1
+            default: 40
         },
-        tres: {
+        sesenta: {
             type: Number,
-            default: 1
+            default: 60
         },
-        cuatro: {
+        ochenta: {
             type: Number,
-            default: 1
+            default: 80
         },
-        cinco: {
+        cien: {
             type: Number,
-            default: 1
+            default: 100
         },
     },
     exists:{

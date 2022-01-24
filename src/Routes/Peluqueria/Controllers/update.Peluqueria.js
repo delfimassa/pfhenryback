@@ -80,41 +80,41 @@ const updateRating = async (req, res) => {
     console.log("Peluqueria encontrada con ese id que llego x params: ", peluToUpdate);
 
     if (peluToUpdate) {
-      let { cinco, cuatro, tres, dos, uno } = peluToUpdate.numRating;
+      let { cien, ochenta, sesenta, cuarenta, veinte } = peluToUpdate.numRating;
       let count;
       let change;
       switch (newReview.rating) {
         case 1:
-          uno = uno+1;
-          change = "uno";
-          count = uno;
+          veinte = veinte+1;
+          change = "veinte";
+          count = veinte;
           break;
         case 2:
-          dos= dos+1
-          change = "dos";
-          count = dos;
+          cuarenta= cuarenta+1
+          change = "cuarenta";
+          count = cuarenta;
           break;
         case 3:
-          tres = tres + 1;
-          change = "tres";
-          count = tres;
+          sesenta = sesenta + 1;
+          change = "sesenta";
+          count = sesenta;
           break;
         case 4:
-          cuatro = cuatro + 1;
-          change = "cuatro";
-          count = cuatro;
+          ochenta = ochenta + 1;
+          change = "ochenta";
+          count = ochenta;
           break;
         case 5:
-          cinco = cinco + 1;
-          change = "cinco";
-          count = cinco;
+          cien = cien + 1;
+          change = "cien";
+          count = cien;
           break;
         default:
           return res.send("Hubo un error, los nros tiene que ser entre 1 y 5");
       }
-      let multi = (5 * cinco) + (4 * cuatro) + (3 * tres) + (2 * dos) + (1 * uno);
-      let sum = cinco + cuatro + tres + dos + uno;
-      let newRating = multi / sum  || 0;
+      let multi = (100 * cien) + (80 * ochenta) + (60 * sesenta) + (40 * cuarenta) + (20 * veinte);
+      let sum = cien + ochenta + sesenta + cuarenta + veinte;
+      let newRating = Math.floor(multi / sum)  || 0;
 
       let update = await Peluqueria.findByIdAndUpdate(id, {
         rating: newRating,

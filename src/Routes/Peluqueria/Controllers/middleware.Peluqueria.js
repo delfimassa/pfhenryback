@@ -1,7 +1,7 @@
 // let arrTurnos = [] //guardo los turnos
 const turnatorio = (string, lapsoMinutos, arrTurnos) => { 
     let separarHoras= string.split(" ").slice(4).filter((i) => {return i !== 'a'} ) //saco los datos al pedo
-    let [horaInicial, horaFinal] = separarHoras //separo las dos horas
+    let [horaInicial, horaFinal] = separarHoras //separo las cuarenta horas
     let [hora, minutos] = horaInicial.split(':') //separo la hora y los mins de la hora inicial
     let [horaCierre, minCierre] = horaFinal.split(':') //lo mismo q arriba pero con la final
     let sumarMinutos= Number(minutos) + lapsoMinutos //suma los mins
