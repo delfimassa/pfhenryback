@@ -20,7 +20,7 @@ const createTurno = async (req, res) => {
             service,
             time,
             date,
-            stylist,
+            // stylist,
             peluqueria,
             client: findClient._id
         });
