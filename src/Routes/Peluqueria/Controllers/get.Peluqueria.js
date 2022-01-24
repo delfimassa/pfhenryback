@@ -5,8 +5,9 @@ const getPeluqueria = async (req, res) => {
     // console.log('query getPeluqueria:', name, service, order);
     try {
         let getPelu = await Peluquerias.find({ exists: true })
-            .populate('services')
+            .populate('services.service')
             .populate('reviews')
+            .populate('turnos')
             .populate('stylists');
         // console.log('getPelu getPeluqueria: ', getPelu);
 
@@ -64,8 +65,9 @@ const getPeluqueriaById = async (req, res) => {
     // console.log('params getPeluqueriaById:', id);
     try {
         const getPeluById = await Peluquerias.findById(id)
-            .populate('services')
+            .populate('services.service')
             .populate('reviews')
+            .populate('turnos')
             .populate('stylists');
         // console.log('getPeluById getPeluqueriaById: ', getPeluById);
 

@@ -8,7 +8,7 @@ const deleteTurno = async (req, res) => {
         await deleted.save();
         // console.log('deleted deleteTurno: ', deleted);
 
-        if(deleted) return res.send('Se calnselo el turno');
+        if(deleted) return res.send('Se cancelo el turno');
         res.send('Hubo un error al cancelar el turno');
     } catch (error) {
         console.log(error);

@@ -43,6 +43,13 @@ const peluquerias = new Schema({
         type: String,
         required: true,
     },
+    turnero: [{
+        type: String,
+    }],
+    turnos: [{
+        type: Schema.Types.ObjectId,
+        ref: 'turno'
+    }],
     services: [{
         price: {
             type: String,

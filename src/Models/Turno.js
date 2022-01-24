@@ -28,8 +28,10 @@ const turno = new Schema({
         type: Boolean,
         default: true,
     },
-    phone:{ //del cliente? faltaria el nombre, id algo mas del client
-        type: String
+    client:{ //del cliente? faltaria el nombre, id algo mas del client
+        type: Schema.Types.ObjectId,
+        ref: 'cliente',
+        required: true
     }
 })
 
