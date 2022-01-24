@@ -1,5 +1,35 @@
 const Peluqueria = require("../../../Models/Peluqueria");
 
+const addTurno = async (req, res) => {
+  const { id } = req.params;
+  const { newTurno } = req.body;
+  // console.log('params addTurno: ', id);
+  // console.log('body addTurno: ', newTurno);
+  try {
+    let find = await Peluqueria.findById(id);
+    // console.log('find addTurno: ', find);
+
+    let add;
+    if(find.turnos) {
+      add = await Peluqueria.findByIdAndUpdate(id, {
+        turnos: [...find.turnos, newTurno._id]
+      }, { new: true });
+      await add.save();
+    } else {
+      let add = await Peluqueria.findByIdAndUpdate(id, {
+        turnos: [newTurno._id]
+      }, { new: true });
+      await add.save();
+    }
+    // console.log('add addTurno: ', add);
+
+    if(add)  return res.send('Turno agregado');
+    res.status(404).send('No se pudo agregar el turno');
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const updatePeluqueria = async (req, res) => {
   const {
     id,
@@ -104,4 +134,5 @@ const updateRating = async (req, res) => {
 module.exports = {
   updatePeluqueria,
   updateRating,
+  addTurno
 };

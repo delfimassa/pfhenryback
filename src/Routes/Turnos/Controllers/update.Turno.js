@@ -1,10 +1,10 @@
 const Turno = require("../../../Models/Turno");
 
 const updateTurno = async (req, res) => {
-    const { id } = req.body;
+    const { idTurno } = req.body;
     // console.log('body updateTurno: ', id);
     try {
-        let update = await Turno.findByIdAndUpdate(id,{
+        let update = await Turno.findByIdAndUpdate(idTurno,{
             vacancy: false
         }, { new: true });
         await update.save();
