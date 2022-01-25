@@ -1,12 +1,16 @@
 // let arrTurnos = [] //guardo los turnos
 const turnatorio = (string, lapsoMinutos, arrTurnos) => { 
-    let separarHoras= string.split(" ").slice(4).filter((i) => {return i !== 'a'} ) //saco los datos al pedo
+    let separarHoras= string.split(" ").slice(3).filter((i) => {return i !== 'a'} ) //saco los datos al pedo
     let [horaInicial, horaFinal] = separarHoras //separo las dos horas
+    // console.log("hora inicial" , horaInicial);
+    // console.log("hora final", horaFinal)
     let [hora, minutos] = horaInicial.split(':') //separo la hora y los mins de la hora inicial
     let [horaCierre, minCierre] = horaFinal.split(':') //lo mismo q arriba pero con la final
     let sumarMinutos= Number(minutos) + lapsoMinutos //suma los mins
     let sumarHoras = Math.floor(sumarMinutos/60) + Number(hora) //suma las horas
     let minutosPosta = sumarMinutos % 60 //muestra los minutos acorde a la hora (por ej: 10:00 + 70 = 10:10 )
+
+   
 
     let nuevaHora = () => {
         if(sumarHoras > 24){ //si las horas sumadas son mas de 24 da la vuelta al reloj  

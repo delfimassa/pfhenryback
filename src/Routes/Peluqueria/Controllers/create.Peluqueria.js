@@ -20,9 +20,11 @@ const createPeluqueria = async (req, res) => {
     try {
         let arrTurnos = [];
         turnatorio(schedule, time, arrTurnos);
-        let primerHora = string.split(' ').slice(4, 5).join('');
+        let primerHora = schedule.split(' ').slice(3, 4).join('');
         arrTurnos.unshift(primerHora);
+        // console.log('primera hora', primerHora);
         arrTurnos.pop();
+        
 
         let loginLocal = new Peluquerias({
             name,
