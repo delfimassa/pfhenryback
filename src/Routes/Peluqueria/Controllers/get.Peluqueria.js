@@ -65,7 +65,7 @@ const getPeluqueriaById = async (req, res) => {
     // console.log('params getPeluqueriaById:', id);
     try {
         const getPeluById = await Peluquerias.findById(id)
-            .populate('services')
+            .populate('services.service')
             .populate('reviews')
             .populate('turnos')
             .populate('stylists');
@@ -78,7 +78,25 @@ const getPeluqueriaById = async (req, res) => {
     }
 };
 
+const getPeluqueriaByUsername = async (req, res) => {
+    const { username } = req.query;
+    console.log('query getPeluqueriaById:', req);
+    try {
+        let getPeluByUsername = await Peluquerias.findOne({username: username})
+            // .populate('services.service')
+            // .populate('turnos')
+            // .populate('stylists');
+        console.log('getPeluByUsername getPeluqueriaById: ', getPeluByUsername);
+
+        if (getPeluByUsername && getPeluByUsername.exists) return res.json(getPeluByUsername);
+        res.status(404).send('No se trajo lo de la DB o no existe');
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 module.exports = {
     getPeluqueria,
-    getPeluqueriaById
+    getPeluqueriaById,
+    getPeluqueriaByUsername
 };

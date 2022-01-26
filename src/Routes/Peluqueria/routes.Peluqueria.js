@@ -3,6 +3,7 @@ const {
     createPeluqueria,
     deletePeluqueria,
     getPeluqueriaById,
+    getPeluqueriaByUsername,
     getPeluqueria,
     updatePeluqueria,
     updateRating,
@@ -13,6 +14,7 @@ const router = Router();
 //  /peluqueria
 router.get('/', getPeluqueria);
 router.get('/:id', getPeluqueriaById);
+router.get('/username', getPeluqueriaByUsername); 
 router.post('/create', createPeluqueria);
 router.put('/update', updatePeluqueria);
 router.put('/update/rating/:id', updateRating);
