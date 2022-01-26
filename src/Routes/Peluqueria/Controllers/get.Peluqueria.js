@@ -79,10 +79,11 @@ const getPeluqueriaById = async (req, res) => {
 };
 
 const getPeluqueriaByUsername = async (req, res) => {
-    const { username } = req.query;
-    console.log('query getPeluqueriaById:', req);
+    // const { username } = req.query;
+    const { username } = req.body;
+    console.log('query getPeluqueriaById:', username);
     try {
-        let getPeluByUsername = await Peluquerias.findOne({username: username})
+        let getPeluByUsername = await Peluquerias.findOne({ username: username })
             // .populate('services.service')
             // .populate('turnos')
             // .populate('stylists');
