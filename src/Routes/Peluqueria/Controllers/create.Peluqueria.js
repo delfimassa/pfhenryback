@@ -1,4 +1,5 @@
 const Peluquerias = require("../../../Models/Peluqueria");
+const Servicios = require("../../../Models/Servicios");
 const { turnatorio } = require('./middleware.Peluqueria');
 
 const createPeluqueria = async (req, res) => {
@@ -13,16 +14,30 @@ const createPeluqueria = async (req, res) => {
         phone,
         schedule,
         time,
-        services, //Array de id
+        services, //Array de name
         stylists  //Array de id
     } = req.body;
-    // console.log('body createPeluqueria: ', name, username, password, avatar, address, city, state, phone, schedule, services, stylists)
+    console.log('body createPeluqueria: ', name, username, password, avatar, address, city, state, phone, schedule, services, stylists)
     try {
         let arrTurnos = [];
         turnatorio(schedule, time, arrTurnos);
-        let primerHora = string.split(' ').slice(4, 5).join('');
+        let primerHora = schedule.split(' ').slice(3, 4).join('');
         arrTurnos.unshift(primerHora);
+        // console.log('primera hora', primerHora);
         arrTurnos.pop();
+        
+        let arrServices = [];
+        for(let i = 0; i < services.length; i++) {
+            let findService = await Servicios.findOne({name: services[i]});
+            console.log('findService hora', findService);
+            let obj = {
+                payment: "$300",
+                price: findService.price,
+                service: findService._id
+            }
+            arrServices.push(obj);
+        };
+        console.log('arrServices hora', arrServices);
 
         let loginLocal = new Peluquerias({
             name,
@@ -35,7 +50,7 @@ const createPeluqueria = async (req, res) => {
             phone,
             schedule,
             turnero: arrTurnos,
-            services,
+            services: arrServices,
             stylists
         });
         await loginLocal.save();

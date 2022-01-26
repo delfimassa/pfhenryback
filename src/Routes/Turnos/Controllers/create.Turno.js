@@ -11,10 +11,10 @@ const createTurno = async (req, res) => {
         peluqueria, // Id de la peluqueria
         client // Username del cliente
     } = req.body;
-    // console.log('body createTurno: ', service, time, date, stylist, peluqueria, phone);
+    console.log('body createTurno: ', service, time, date, peluqueria, client);
     try {
         let findClient = await Cliente.findOne({ username: client });
-        // console.log('findClient createTurno: ', findClient);
+        console.log('findClient createTurno: ', findClient);
 
         let newTurno = new Turno({
             service,
@@ -25,7 +25,7 @@ const createTurno = async (req, res) => {
             client: findClient._id
         });
         await newTurno.save();
-        // console.log('newTurno createTurno: ', newTurno);
+        console.log('newTurno createTurno: ', newTurno);
         
         if(newTurno) {
             let idTurno = newTurno._id;

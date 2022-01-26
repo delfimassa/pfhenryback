@@ -53,7 +53,10 @@ const peluquerias = new Schema({
     services: [{
         price: {
             type: String,
-            required: true
+            // required: true
+        },
+        payment: {
+            type: String,
         },
         service: {
             type: Schema.Types.ObjectId,
