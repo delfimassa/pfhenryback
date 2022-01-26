@@ -1,10 +1,11 @@
 const { default: axios } = require("axios");
 const Cliente = require("../../../Models/Cliente");
 const Turno = require("../../../Models/Turno");
+const Servicios = require("../../../Models/Servicios");
 
 const createTurno = async (req, res) => {
     const {
-        service, // Id del servicio
+        service, // INombre del serviciio
         time,
         date,
         // stylist, // Id del peluquero
@@ -16,8 +17,11 @@ const createTurno = async (req, res) => {
         let findClient = await Cliente.findOne({ username: client });
         console.log('findClient createTurno: ', findClient);
 
+        let findService = await Servicios.findOne({name: service})
+        console.log('findService hora', findService);
+
         let newTurno = new Turno({
-            service,
+            service: findService._id,
             time,
             date,
             // stylist,
