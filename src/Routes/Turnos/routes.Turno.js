@@ -11,8 +11,8 @@ const router = Router();
 
 
 //   / turno
-router.get('/', getTurno);
 router.get('/:id', getTurnoById);
+router.get('/peluqueria/:id', getTurno);
 router.post('/create', createTurno);
 router.put('/update', updateTurno);
 router.put('/delete', deleteTurno);

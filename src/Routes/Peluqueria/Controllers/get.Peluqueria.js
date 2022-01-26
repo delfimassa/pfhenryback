@@ -78,7 +78,26 @@ const getPeluqueriaById = async (req, res) => {
     }
 };
 
+const getPeluqueriaByUsername = async (req, res) => {
+    // const { username } = req.query;
+    const { username } = req.body;
+    console.log('query getPeluqueriaById:', username);
+    try {
+        let getPeluByUsername = await Peluquerias.findOne({ username: username })
+            // .populate('services.service')
+            // .populate('turnos')
+            // .populate('stylists');
+        console.log('getPeluByUsername getPeluqueriaById: ', getPeluByUsername);
+
+        if (getPeluByUsername && getPeluByUsername.exists) return res.json(getPeluByUsername);
+        res.status(404).send('No se trajo lo de la DB o no existe');
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 module.exports = {
     getPeluqueria,
-    getPeluqueriaById
+    getPeluqueriaById,
+    getPeluqueriaByUsername
 };

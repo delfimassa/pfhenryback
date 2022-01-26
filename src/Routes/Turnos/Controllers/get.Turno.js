@@ -2,13 +2,15 @@ const Turno = require("../../../Models/Turno");
 
 const getTurno = async (req, res) => {
     const { peluqueria } = req.body;
-    // console.log('peluqueria getTurno: ', peluqueria);
+    const { id } = req.params;
+    console.log('body getTurno: ', peluqueria);
+    console.log('params getTurno: ', id);
     try {
-        let findTurno = await Turno.find({ vacancy: false })
+        let findTurno = await Turno.find({ vacancy: false, peluqueria: id })
         .populate('service', ['name'])
-        // .populate('peluqueria', ['name'])
+        .populate('peluqueria', ['name'])
         // .populate('stylist', ['name']);
-        // console.log('findTurno getTurno: ', findTurno);
+        console.log('findTurno getTurno: ', findTurno);
         
         // let filtered = findTurno.filter(t => t.peluqueria.name === peluqueria);
         // console.log('filtered getTurno: ', filtered);
