@@ -18,7 +18,12 @@ const cart = new Schema({
     client: {
         type: String,
         required: true
+    },
+    peluqueria: {
+        type: Schema.Types.ObjectId,
+        ref: 'peluquerias',
+        required: true
     }
-})
+});
 
 module.exports = model("cart", cart);

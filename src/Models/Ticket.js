@@ -5,16 +5,26 @@ const ticket = new Schema({
     cart: {
         type: Schema.Types.ObjectId,
         ref: "cart",
+        // required: true
+    },
+    peluqueria: {
+        type: Schema.Types.ObjectId,
+        ref: 'peluquerias',
         required: true
     },
-    user: {
+    service: {
         type: Schema.Types.ObjectId,
-        ref: "client",
+        ref: "servicio",
+        required: true
+    },
+    client: {
+        type: Schema.Types.ObjectId,
+        ref: "cliente",
         required: true
     },
     exists: {
         type: Boolean,
-        default: true,
+        default: true
     }
 })
 
