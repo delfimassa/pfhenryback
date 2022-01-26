@@ -3,16 +3,16 @@ const {
     createTicket,
     updateTicket,
     deleteTicket,
-    getTicketById,
-    getTicket
+    getTicketPelu, 
+    getTicketByClient
 } = require('./Controllers/all.controllers');
 
 const router = Router();
 
 
 //   / ticket
-router.get('/', getTicket);
-router.get('/:id', getTicketById);
+router.get('/peluqueria', getTicketPelu);
+router.get('/client', getTicketByClient);
 router.post('/create', createTicket);
 router.put('/update', updateTicket);
 router.put('/delete', deleteTicket);
