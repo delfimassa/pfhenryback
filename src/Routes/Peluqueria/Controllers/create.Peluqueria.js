@@ -1,6 +1,6 @@
 const Peluquerias = require("../../../Models/Peluqueria");
-const Servicios = require("../../../Models/Servicios");
-const { turnatorio } = require('./middleware.Peluqueria');
+const Servicios = require("../../../Models/Servicios")
+const { turnatorio,arrTurnos } = require('./middleware.Peluqueria');
 
 const createPeluqueria = async (req, res) => {
     const {
@@ -14,17 +14,12 @@ const createPeluqueria = async (req, res) => {
         phone,
         schedule,
         time,
-        services, //Array de name
+        services, //Array de id
         stylists  //Array de id
     } = req.body;
-    console.log('body createPeluqueria: ', name, username, password, avatar, address, city, state, phone, schedule, services, stylists)
+    // console.log('body createPeluqueria: ', name, username, password, avatar, address, city, state, phone, schedule, services, stylists)
     try {
-        let arrTurnos = [];
-        turnatorio(schedule, time, arrTurnos);
-        let primerHora = schedule.split(' ').slice(3, 4).join('');
-        arrTurnos.unshift(primerHora);
-        // console.log('primera hora', primerHora);
-        arrTurnos.pop();
+        turnatorio(schedule, Number(time));
         
         let arrServices = [];
         for(let i = 0; i < services.length; i++) {
