@@ -2,7 +2,7 @@ const Favorito = require("../../../Models/Favorito");
 
 const getFavorite = async (req, res) => {
     const { client } = req.body;
-    // console.log('body getFavorite: ', client);
+    console.log('body getFavorite: ', client);
     try {
         let findFav = await Favorito.find({exists: true, client: client})
         .populate('peluqueria'); 
