@@ -80,7 +80,7 @@ const getPeluqueriaById = async (req, res) => {
 
 const getPeluqueriaByUsername = async (req, res) => {
     // const { username } = req.query;
-    const { username } = req.body;
+    const { username } = req.params;
     console.log('query getPeluqueriaById:', username);
     try {
         let getPeluByUsername = await Peluquerias.findOne({ username: username })
