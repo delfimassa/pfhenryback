@@ -3,7 +3,7 @@ const mercadopago = require("mercadopago");
 // Agrega credenciales
 mercadopago.configure({
   access_token:
-    "APP_USR-8427911334865796-012222-2327a0e6b92eb33f905c39d157550f29-133171336",
+    "APP_USR-8714442290286267-012401-1c2b103d27d0f440225f3338462f018f-1062051657",
 });
 
 
@@ -17,6 +17,12 @@ const createMP = async (req, res) => {
         quantity: 1,
       },
     ],
+    "back_urls": {
+      "success": "http://localhost:3000/home",
+      "failure": "http://localhost:3000/home",
+      "pending": "http://localhost:3000/home"
+    },
+    "auto_return": "approved",
   };
 
   mercadopago.preferences
