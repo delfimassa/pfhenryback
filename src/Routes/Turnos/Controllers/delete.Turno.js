@@ -4,7 +4,9 @@ const deleteTurno = async (req, res) => {
     const { id } = req.body;
     // console.log('body deleteTurno: ', id);
     try {
-        let deleted = await Turno.findByIdAndDelete(id);
+        let deleted = await Turno.findByIdAndUpdate(id,{
+            exists: false
+        }, { new: true });
         await deleted.save();
         // console.log('deleted deleteTurno: ', deleted);
 

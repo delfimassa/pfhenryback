@@ -6,16 +6,16 @@ const createTicket = async (req, res) => {
         peluqueria, //Id de pelu
         client, //Username de client
         service, //Id de service
-        cart //Id de cart
+        // cart //Id de cart
     } = req.body;
     try {
-        let findClient = await Cliente.findOne({ username: client });
+        // let findClient = await Cliente.findOne({ username: client });
 
         let newTicket = new Ticket({
             peluqueria,
-            client: findClient._id,
+            client,
             service,
-            cart
+            // cart
         })
         await newTicket.save();
 

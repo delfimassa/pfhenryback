@@ -5,7 +5,8 @@ const {
     deleteTurno,
     getTurno,
     getTurnoById,
-    getTurnoByClient
+    getTurnoByClient,
+    updateStateTurno
 } = require('./Controllers/all.controllers');
 
 const router = Router();
@@ -17,6 +18,7 @@ router.get('/peluqueria/:id', getTurno);
 router.get('/client/:username', getTurnoByClient);
 router.post('/create', createTurno);
 router.put('/update', updateTurno);
+router.put('/update/state', updateStateTurno);
 router.put('/delete', deleteTurno);
 
 module.exports = router;

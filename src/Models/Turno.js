@@ -28,10 +28,18 @@ const turno = new Schema({
         type: Boolean,
         default: true,
     },
+    status: {
+        type: String,
+        default: 'Pending'
+    },
     client:{ //del cliente? faltaria el nombre, id algo mas del client
         type: Schema.Types.ObjectId,
         ref: 'cliente',
         required: true
+    },
+    exists:{
+        type: Boolean,
+        defalut: true
     }
 })
 

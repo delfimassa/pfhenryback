@@ -1,7 +1,7 @@
 const { createTurno } = require('./create.Turno');
 const { deleteTurno } = require('./delete.Turno');
 const { getTurno, getTurnoById, getTurnoByClient } = require('./get.Turno');
-const { updateTurno } = require('./update.Turno');
+const { updateTurno, updateStateTurno } = require('./update.Turno');
 
 
 module.exports = {
@@ -10,5 +10,6 @@ module.exports = {
     deleteTurno,
     getTurnoById,
     getTurno,
-    getTurnoByClient
+    getTurnoByClient,
+    updateStateTurno
 }
