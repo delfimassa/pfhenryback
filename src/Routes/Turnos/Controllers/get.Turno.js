@@ -26,20 +26,20 @@ const getTurno = async (req, res) => {
 };
 
 const getTurnoByClient = async (req, res) => {
-    const { client } = req.body;
+    const { username } = req.params;
     console.log('client getTurnoByClient: ', req.params);
     try {
-        let findClient = await Cliente.findOne({ username: client})
+        let findClient = await Cliente.findOne({ username: username})
         
         let findTurnos = await Turno.find({ client: findClient._id })
-        .populate('service', ['name'])
+        .populate('service', ['name', 'price'])
         .populate('peluqueria', ['name'])
         .populate('client', ['name', 'username', 'phone']);
         
         if(findTurnos.length > 0) return res.json(findTurnos);
         res.status(404).send('No se encontro los turnos');
     } catch (error) {
-        consoole.log(error);
+        console.log(error);
     }
 }
 
