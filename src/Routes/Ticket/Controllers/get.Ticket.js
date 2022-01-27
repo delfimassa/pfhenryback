@@ -22,7 +22,6 @@ const getTicketByClient = async (req, res) => {
     try {
         let findClient = await Cliente.findOne({ username: client })
         console.log('findClient getTicketByClient: ', findClient._id);
-        
 
         if(findClient) {
             let findByClient = await Ticket.find({ client: findClient._id })

@@ -18,6 +18,7 @@ const peluquerias = new Schema({
     },
     avatar: {
         type: String,
+        defalut: ''
     },
     rating: {
         type: Number,
