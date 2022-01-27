@@ -1,4 +1,5 @@
 const Turno = require("../../../Models/Turno");
+const Cliente = require("../../../Models/Cliente");
 
 const getTurno = async (req, res) => {
     const { peluqueria } = req.body;
@@ -9,7 +10,8 @@ const getTurno = async (req, res) => {
         let findTurno = await Turno.find({ vacancy: false, peluqueria: id })
         .populate('service', ['name'])
         .populate('peluqueria', ['name'])
-        // .populate('stylist', ['name']);
+        // .populate('stylist', ['name'])
+        .populate('client', ['name', 'username', 'phone']);
         console.log('findTurno getTurno: ', findTurno);
         
         // let filtered = findTurno.filter(t => t.peluqueria.name === peluqueria);
@@ -22,6 +24,24 @@ const getTurno = async (req, res) => {
         console.log(error);
     }
 };
+
+const getTurnoByClient = async (req, res) => {
+    const { client } = req.body;
+    console.log('client getTurnoByClient: ', req.params);
+    try {
+        let findClient = await Cliente.findOne({ username: client})
+        
+        let findTurnos = await Turno.find({ client: findClient._id })
+        .populate('service', ['name'])
+        .populate('peluqueria', ['name'])
+        .populate('client', ['name', 'username', 'phone']);
+        
+        if(findTurnos.length > 0) return res.json(findTurnos);
+        res.status(404).send('No se encontro los turnos');
+    } catch (error) {
+        consoole.log(error);
+    }
+}
 
 const getTurnoById = async (req, res) => {
     const { id } = req.params;
@@ -42,5 +62,6 @@ const getTurnoById = async (req, res) => {
 
 module.exports = {
     getTurno,
-    getTurnoById
+    getTurnoById,
+    getTurnoByClient
 };
