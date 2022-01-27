@@ -1,15 +1,19 @@
-// let arrTurnos = [] //guardo los turnos
-const turnatorio = (string, lapsoMinutos, arrTurnos) => { 
+let arrTurnos = [] //guardo los turnos
+const turnatorio = (string, lapsoMinutos) => { 
+    console.log(lapsoMinutos)
     let separarHoras= string.split(" ").slice(3).filter((i) => {return i !== 'a'} ) //saco los datos al pedo
     let [horaInicial, horaFinal] = separarHoras //separo las dos horas
-    // console.log("hora inicial" , horaInicial);
-    // console.log("hora final", horaFinal)
+    console.log("hora inicial" , horaInicial);
+    console.log("hora final", horaFinal)
     let [hora, minutos] = horaInicial.split(':') //separo la hora y los mins de la hora inicial
     let [horaCierre, minCierre] = horaFinal.split(':') //lo mismo q arriba pero con la final
     let sumarMinutos= Number(minutos) + lapsoMinutos //suma los mins
     let sumarHoras = Math.floor(sumarMinutos/60) + Number(hora) //suma las horas
     let minutosPosta = sumarMinutos % 60 //muestra los minutos acorde a la hora (por ej: 10:00 + 70 = 10:10 )
 
+    console.log('minutos posta' ,minutosPosta)
+    console.log('sumar horas', sumarHoras)
+    console.log('sumar minutos', sumarMinutos)
    
 
     let nuevaHora = () => {
@@ -30,7 +34,12 @@ const turnatorio = (string, lapsoMinutos, arrTurnos) => {
         else return minutosPosta
     } 
 
+    console.log('nueva hora', nuevaHora())
+    console.log('nuevo minuto', nuevoMinuto())
+
+
     arrTurnos.push(`${nuevaHora()}:${nuevoMinuto()}`) //pusheo valor a arr
+    // console.log(arrTurnos) //pusheo valor a arr
     let ultimoElemento = arrTurnos[arrTurnos.length - 1] //consigo el ultimo elemento
     let [horaUltimoElemento, minutosUltimoElemento] = ultimoElemento.split(':') //lo divido
     
@@ -40,13 +49,17 @@ const turnatorio = (string, lapsoMinutos, arrTurnos) => {
         return;
     } //cuando sea igual o mayor q hora de cierre termina el bucle
     else {
-        let newString = string.replace(`${horaInicial}`, `${ultimoElemento}`) //remplazo el horario inicial con el ultimo elemento del array
-        turnatorio(newString, lapsoMinutos)
+        let newString = string.replace(`${horaInicial}`, `${ultimoElemento}`) //remplazo el horario inicial con el ultimo elemento del array   
+        turnatorio(newString, Number(lapsoMinutos))
     } //sino hace recursividad con el ultimo turno creado
 };
 
+arrTurnos.pop()
+console.log(arrTurnos)
+
 module.exports = {
-    turnatorio
+    turnatorio,
+    arrTurnos
 };
 
 // let string = 'Lunes a Viernes de 09:00 a 22:00' 
